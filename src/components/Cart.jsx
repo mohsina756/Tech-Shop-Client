@@ -17,7 +17,7 @@ const Cart = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/added/${id}`, {
+        fetch(`https://promotion-dept-server.vercel.app/added/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -37,7 +37,7 @@ const Cart = () => {
   };
   return (
     <div>
-      <h1 className="  text-center mx-10 border-4 p-2 border-cyan-500 my-5    text-xl md:text-3xl font-bold text-cyan-500 rounded-xl">
+      <h1 className="  text-center mx-10 border-4 p-2 border-purple-400 my-5    text-xl md:text-3xl font-bold text-purple-400 rounded-xl">
         My Added products
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2">
@@ -63,7 +63,7 @@ const Cart = () => {
                   
                   <button
                     onClick={() => handleDelete(product._id)}
-                    className="btn normal-case bg-cyan-500 text-white hover:text-black hover:bg-white"
+                    className="btn normal-case bg-purple-400 text-white hover:text-black hover:bg-white"
                   >
                     Delete
                   </button>

@@ -10,9 +10,9 @@ const Home = () => {
     <div className="bg-base-200">
       {/* Banner */}
       <div className="carousel carousel-center ">
-        <div className="carousel-item w-full h-[270px] md:h-[480px]">
+        <div className="carousel-item w-full h-[270px] md:h-[480px]  ">
           <img
-            src="https://i.ibb.co/qYPz4TN/33139536-7995902.jpg"
+            src=" https://i.ibb.co/5FQshKY/6355883.jpg"
             alt="Banner"
           />
         </div>
@@ -20,7 +20,7 @@ const Home = () => {
       <hr className="p-2 bg-base-300" />
       {/* product card */}
       <div>
-        <h1 className="  text-center mx-10 border-4 p-2 border-cyan-500 my-5  text-xl md:text-5xl font-bold text-cyan-500 rounded-xl">
+        <h1 className="  text-center mx-10 border-4 p-2 border-purple-400 my-5  text-xl md:text-5xl font-bold text-purple-400 rounded-xl">
           Brands
         </h1>
         {/* <Card />; */}
@@ -35,12 +35,12 @@ const Home = () => {
       <hr className="p-2 bg-base-300" />
       {/* About Us */}
       <div>
-        <h1 className="  text-center mx-10 border-4 p-2 border-cyan-500 my-5  text-xl md:text-5xl font-bold text-cyan-500 rounded-xl">
+        <h1 className="  text-center mx-10 border-4 p-2 border-purple-400 my-5  text-xl md:text-5xl font-bold text-purple-400 rounded-xl">
           About Us
         </h1>
         <div className="mx-5 lg:mx-20 mb-5 text-clip gap-20 grid grid-flow-row md:grid-flow-col  justify-between">
           <p className="indent-2">
-            <span className="text-cyan-500 text-3xl border-l-2 border-l-cyan-500 pl-2">
+            <span className="text-purple-400 text-3xl border-l-2 border-l-purple-400 pl-2">
               R
             </span>
             HR Tech, our mission is to empower individuals and businesses with
@@ -69,7 +69,7 @@ const Home = () => {
       </div>
       <hr className="p-2 bg-base-300" />
       {/* Customers Review */}
-      <h1 className="  text-center mx-10 border-4 p-2 border-cyan-500 my-5  text-xl md:text-5xl font-bold text-cyan-500 rounded-xl">
+      <h1 className="  text-center mx-10 border-4 p-2 border-purple-400 my-5  text-xl md:text-5xl font-bold text-purple-400 rounded-xl">
         Customers Review
       </h1>
       <div>
@@ -78,15 +78,15 @@ const Home = () => {
 
       <hr className="p-2 bg-base-300" />
       {/* Contact Us */}
-      <h1 className="  text-center mx-10 border-4 p-2 border-cyan-500 my-5  text-xl md:text-5xl font-bold text-cyan-500 rounded-xl">
+      <h1 className="  text-center mx-10 border-4 p-2 border-purple-400 my-5  text-xl md:text-5xl font-bold text-purple-400 rounded-xl">
         Contact Us !
       </h1>
-      <div className="flex flex-col md:flex-row justify-around  bg-cyan-500 rounded-2xl  mb-5 mx-1 lg:mx-20 py-8">
+      <div className="flex flex-col md:flex-row justify-around  bg-purple-400 rounded-2xl  mb-5 mx-1 lg:mx-20 py-8">
         {/* left side */}
-        <div className=" flex py-5 rounded-xl  justify-center    bg-cyan-500 ">
+        <div className=" flex py-5 rounded-xl  justify-center    bg-purple-400 ">
           <div className="card px-0 md:px-10  max-w-sm md:max-w-2xl shadow-2xl bg-base-100">
             <div className="card-body px-4 md:px-8">
-              <h2 className=" underline underline-offset-4 text-center text-2xl font-medium text-cyan-500">
+              <h2 className=" underline underline-offset-4 text-center text-2xl font-medium text-purple-400">
                 Visit Us !
               </h2>
               <div className="form-control">
@@ -126,10 +126,10 @@ const Home = () => {
           </div>
         </div>
         {/* message us */}
-        <div className=" flex py-5 rounded-xl  justify-center    bg-cyan-500">
+        <div className=" flex py-5 rounded-xl  justify-center    bg-purple-400">
           <div className="card   max-w-sm shadow-2xl bg-base-100">
             <form className="card-body">
-              <h2 className=" underline underline-offset-4 text-center text-2xl font-medium text-cyan-500">
+              <h2 className=" underline underline-offset-4 text-center text-2xl font-medium text-purple-400">
                 Message Us !
               </h2>
               <div className="form-control">
@@ -159,12 +159,12 @@ const Home = () => {
                   <span className="label-text">Questions</span>
                 </label>
                 <textarea
-                  className="textarea outline outline-cyan-500 outline-offset-0 outline-1"
+                  className="textarea outline outline-purple-400 outline-offset-0 outline-1"
                   placeholder="Write here..."
                 ></textarea>
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-xs md:btn-md normal-case border-cyan-500   text-cyan-500">
+                <button className="btn btn-xs md:btn-md normal-case border-purple-400   text-purple-400">
                   Send
                 </button>
               </div>

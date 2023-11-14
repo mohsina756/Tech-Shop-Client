@@ -14,7 +14,7 @@ const Updates = () => {
     const rating = form.rating.value;
     const updatedProducts = { name, brand, type, price, photo, rating };
 
-    fetch(`http://localhost:5000/products/${_id}`, {
+    fetch(`https://promotion-dept-server.vercel.app/products/${_id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -35,7 +35,7 @@ const Updates = () => {
   };
   return (
     <div>
-      <div className="  bg-cyan-500">
+      <div className="  bg-purple-400">
         <div className=" hero-content flex-col md:mx-10">
           <div className="text-center text-white lg:text-left">
             <h1 className="text-2xl md:text-5xl font-bold">
@@ -174,7 +174,7 @@ const Updates = () => {
               </div>
 
               <div className="form-control md:mx-28 mt-6">
-                <button className="btn text-white hover:text-black bg-cyan-500 normal-case">
+                <button className="btn text-white hover:text-black bg-purple-400 normal-case">
                   Submit
                 </button>
               </div>

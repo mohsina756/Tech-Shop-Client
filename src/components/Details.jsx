@@ -6,7 +6,7 @@ const Details = () => {
   const { name, photo, brand, price, description, rating, type } = product;
   const newProduct = { name, photo, brand, price, description, rating, type };
   const handleCart = (newProduct) => {
-    fetch("http://localhost:5000/added", {
+    fetch("https://promotion-dept-server.vercel.app/added", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -92,7 +92,7 @@ const Details = () => {
             <div>
               <button
                 onClick={() => handleCart(newProduct)}
-                className="btn  bg-cyan-500 text-white hover:text-black hover:bg-white"
+                className="btn  bg-purple-400 text-white hover:text-black hover:bg-white"
               >
                 Add to Cart
               </button>

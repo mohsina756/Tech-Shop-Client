@@ -41,7 +41,7 @@ const router = createBrowserRouter([
             <Cart />
           </Private>
         ),
-        loader: () => fetch("http://localhost:5000/added"),
+        loader: () => fetch("https://promotion-dept-server.vercel.app/added"),
       },
       {
         path: "/login",
@@ -55,7 +55,7 @@ const router = createBrowserRouter([
         path: "/card/:brand",
         element: <Card />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/${params.brand}`),
+          fetch(`https://promotion-dept-server.vercel.app/products/${params.brand}`),
       },
       {
         path: "/card/brand/:id",
@@ -66,7 +66,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `http://localhost:5000/products/brand/${params.id}`
+            `https://promotion-dept-server.vercel.app/products/brand/${params.id}`
           ),
       },
       {
@@ -78,7 +78,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `http://localhost:5000/products/brand/${params.id}`
+            `https://promotion-dept-server.vercel.app/products/brand/${params.id}`
           ),
       },
     ],

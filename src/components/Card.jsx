@@ -9,7 +9,7 @@ const Card = () => {
   return (
     <div>
       <Slider></Slider>
-      <h1 className="  text-center mx-10 border-4 p-2 border-cyan-500 my-5  text-xl md:text-5xl font-bold text-cyan-500 rounded-xl capitalize">
+      <h1 className="  text-center mx-10 border-4 p-2 border-purple-400 my-5  text-xl md:text-5xl font-bold text-purple-400 rounded-xl capitalize">
         {brand.brand} products
       </h1>
       {products.length !== 0 ? (
@@ -30,7 +30,7 @@ const Card = () => {
             <p className="text-xl text-red-500 font-semibold">
               It will restock soon !
             </p>
-            <p className="text-cyan-500 text-lg">Happy Shopping !</p>
+            <p className="text-purple-400 text-lg">Happy Shopping !</p>
           </div>
         </>
       )}

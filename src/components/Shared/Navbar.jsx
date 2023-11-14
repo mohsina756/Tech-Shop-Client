@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { context } from "../ContextProvider/Provider";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import logo from "../../../public/logo.jpeg"
 
 const Navbar = () => {
   const { user, logOutUser } = useContext(context);
@@ -13,7 +14,7 @@ const Navbar = () => {
         <NavLink
           to="/"
           className={({ isActive }) =>
-            isActive ? " border border-offset-4 border-cyan-500 " : ""
+            isActive ? " border border-offset-4 border-purple-400 " : ""
           }
         >
           Home
@@ -23,7 +24,7 @@ const Navbar = () => {
         <NavLink
           to="/add"
           className={({ isActive }) =>
-            isActive ? " border border-offset-4 border-cyan-500 " : ""
+            isActive ? " border border-offset-4 border-purple-400 " : ""
           }
         >
           Add Product
@@ -33,7 +34,7 @@ const Navbar = () => {
         <NavLink
           to="/cart"
           className={({ isActive }) =>
-            isActive ? " border border-offset-4 border-cyan-500 " : ""
+            isActive ? " border border-offset-4 border-purple-400 " : ""
           }
         >
           My Cart
@@ -60,7 +61,7 @@ const Navbar = () => {
   }, [theme]);
   return (
     <div>
-      <div className="navbar bg-base-200 text-cyan-500">
+      <div className="navbar bg-base-200 text-purple-400">
         <div className="navbar-start">
           <div className="dropdown">
             <label
@@ -96,11 +97,11 @@ const Navbar = () => {
             <div className="avatar w-5 md:w-12">
               <img
                 className="rounded-xl"
-                src="https://i.ibb.co/DthpYjT/logo.jpg"
+                src={logo}
                 alt="Logo"
               />
             </div>
-            <p>RHR-Tech</p>
+            <p>Tech-Shop</p>
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -137,7 +138,7 @@ const Navbar = () => {
               />
               <NavLink
                 onClick={handleLogOut}
-                className="btn btn-xs md:btn-md normal-case border-cyan-500  text-cyan-500 "
+                className="btn btn-xs md:btn-md normal-case border-purple-400  text-purple-400 "
               >
                 Log Out
               </NavLink>
@@ -146,7 +147,7 @@ const Navbar = () => {
             <>
               <NavLink
                 to={"/login"}
-                className="btn btn-xs md:btn-md normal-case border-cyan-500  text-cyan-500"
+                className="btn btn-xs md:btn-md normal-case border-purple-400  text-purple-400"
               >
                 Login
               </NavLink>

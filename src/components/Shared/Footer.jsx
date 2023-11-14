@@ -1,24 +1,25 @@
+
+import logo from "../../../public/logo.jpeg"
 const Footer = () => {
   return (
     <div>
-      <footer className="flex flex-col md:flex-row text-center               justify-center md:justify-between px-10  p-10  text-cyan-500 bg-base-200">
+      <footer className="flex flex-col md:flex-row text-center               justify-center md:justify-between px-10  p-10  text-purple-400 bg-base-200">
         <aside className="flex justify-center md:justify-normal">
           <img
             className="h-36 w-36 rounded-xl"
-            src="https://i.ibb.co/DthpYjT/logo.jpg"
-            alt=""
+            src={logo}
+            alt="Logo"
           />
         </aside>
         <div>
           <p className="footer-title">
-            <span className="font-extrabold">RHR-Tech</span>
-            <br />
-            RHR Industries Ltd.
+            <span className="font-extrabold">Tech-Shop</span>
+            
             <br />
             Providing reliable tech since 1992
           </p>
-          <aside className="footer footer-center p-4 text-cyan-500">
-            <p>Copyright © 2023 - All right reserved by RHR Industries Ltd</p>
+          <aside className="footer footer-center p-4 text-purple-400">
+            <p>Copyright © 2023 - All right reserved by Tech Industries Ltd</p>
           </aside>
         </div>
         <nav>
@@ -65,3 +66,7 @@ const Footer = () => {
 };
 
 export default Footer;
+
+/***
+ * https://i.ibb.co/tL5gc4W/gradient-dark-blue-futuristic-digital-background.jpg
+ */

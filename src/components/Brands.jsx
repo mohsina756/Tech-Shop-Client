@@ -5,7 +5,7 @@ const Brands = ({ product }) => {
   return (
     <div>
       {/* Product Card */}
-      <div className="card  text-white flex-col  bg-cyan-500 shadow-xl">
+      <div className="card  text-white flex-col  bg-purple-400 shadow-xl">
         <figure>
           <img
             className="w-full h-80 md:h-72 lg:h-56 p-2 rounded-t-2xl"
@@ -61,12 +61,12 @@ const Brands = ({ product }) => {
 
           <div className="flex gap-2 flex-col md:flex-row justify-center">
             <NavLink to={`/card/update/${_id}`}>
-              <button className="btn  bg-cyan-500 text-white hover:text-black hover:bg-white">
+              <button className="btn  bg-purple-400 text-white hover:text-black hover:bg-white">
                 Update
               </button>
             </NavLink>
             <NavLink to={`/card/brand/${_id}`}>
-              <button className="btn  bg-cyan-500 text-white hover:text-black hover:bg-white">
+              <button className="btn  bg-purple-400 text-white hover:text-black hover:bg-white">
                 Details
               </button>
             </NavLink>

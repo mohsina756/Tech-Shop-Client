@@ -12,7 +12,7 @@ const AddProduct = () => {
     const rating = form.rating.value;
     const description = form.description.value;
     const newProduct = { name, brand, type, price, photo, rating, description };
-    fetch("http://localhost:5000/products", {
+    fetch("https://promotion-dept-server.vercel.app/products", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -33,7 +33,7 @@ const AddProduct = () => {
   };
   return (
     <div>
-      <div className=" bg-cyan-500 ">
+      <div className=" bg-purple-400 ">
         <div className=" hero-content flex-col md:mx-10">
           <div className="text-center text-white lg:text-left">
             <h1 className="text-2xl md:text-5xl font-bold">Add product!</h1>
@@ -171,7 +171,7 @@ const AddProduct = () => {
               </div>
 
               <div className="form-control md:mx-28 mt-6">
-                <button className="btn normal-case text-white hover:text-black bg-cyan-500">
+                <button className="btn normal-case text-white hover:text-black bg-purple-400">
                   Add
                 </button>
               </div>

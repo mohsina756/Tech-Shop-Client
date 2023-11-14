@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 const Error = () => {
   return (
-    <div className="hero min-h-screen bg-cyan-500">
+    <div className="hero min-h-screen bg-purple-400">
       <div className="hero-content flex-col ">
         <div className="text-center lg:text-left">
           <h1 className="text-5xl font-bold text-white">Sorry!</h1>
