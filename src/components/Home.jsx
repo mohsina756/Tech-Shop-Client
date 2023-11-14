@@ -61,7 +61,7 @@ const Home = () => {
           <div className="my-auto">
             <img
               className="w-full h-[320px]"
-              src="https://i.ibb.co/VY7XqMr/download-5.jpg"
+              src="https://i.ibb.co/NNfSqbN/young-businesswoman-with-co-workers.jpg"
               alt=""
             />
           </div>
