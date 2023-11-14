@@ -117,7 +117,7 @@ const Home = () => {
                     <MdEmail className="text-3xl text-red-500"></MdEmail>
                   </span>
                   <div>
-                    <p className="text-xl ">support@rhr-tech.com</p>
+                    <p className="text-xl ">support@tech-shop.com</p>
                     <p className="">Send us your query anytime!</p>
                   </div>
                 </div>
