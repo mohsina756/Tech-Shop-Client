@@ -1,63 +1,94 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
-import AddBrand from './components/AddBrand.jsx'
-import UpdateBrand from './components/UpdateBrand.jsx' ;
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import Products from './components/Products.jsx'
-import Home from './components/Home.jsx'
-import Login from './components/Login.jsx'
-import Registration from './components/Registration.jsx'
-import AuthProvider from './Provider/AuthProvider.jsx'
-import Error from './components/Error.jsx'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.jsx";
+import "./index.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./Components/Home.jsx";
+import Cart from "./Components/Cart.jsx";
+import Card from "./Components/Card.jsx";
+import Login from "./Components/Login.jsx";
+import Register from "./Components/Register.jsx";
+import Provider from "./Components/ContextProvider/Provider.jsx";
+import Details from "./Components/Details.jsx";
+import Updates from "./Components/Updates.jsx";
+import AddProduct from "./Components/AddProduct.jsx";
+import Private from "./Components/Private.jsx";
+import Error from "./Components/Shared/Error.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App></App>,
-    errorElement: <Error></Error>,
-    children:[
+    element: <App />,
+    errorElement: <Error />,
+    children: [
       {
-        path:"/",
-        element: <Home></Home>,
-        loader: () => fetch('https://promotion-dept-server.vercel.app/brand'),
+        path: "/",
+        element: <Home />,
+        loader: () => fetch("/data.json"),
       },
       {
-        path: "/addBrand",
-        element: <AddBrand></AddBrand>,
+        path: "/add",
+        element: (
+          <Private>
+            <AddProduct />
+          </Private>
+        ),
       },
       {
-        path: "/updateBrand",
-        element: <UpdateBrand></UpdateBrand>,
-      },
-      {
-        path: "/brand/:brand",
-        element: <Products></Products>,
-        loader: ({params})=>fetch(`https://promotion-dept-server.vercel.app/brand/${params.brand}`)
+        path: "/cart",
+        element: (
+          <Private>
+            <Cart />
+          </Private>
+        ),
+        loader: () => fetch("http://localhost:5000/added"),
       },
       {
         path: "/login",
-        element: <Login></Login>,
+        element: <Login />,
       },
       {
         path: "/register",
-        element: <Registration></Registration>,
+        element: <Register />,
       },
-    ]
+      {
+        path: "/card/:brand",
+        element: <Card />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/products/${params.brand}`),
+      },
+      {
+        path: "/card/brand/:id",
+        element: (
+          <Private>
+            <Details />
+          </Private>
+        ),
+        loader: ({ params }) =>
+          fetch(
+            `http://localhost:5000/products/brand/${params.id}`
+          ),
+      },
+      {
+        path: "/card/update/:id",
+        element: (
+          <Private>
+            <Updates />
+          </Private>
+        ),
+        loader: ({ params }) =>
+          fetch(
+            `http://localhost:5000/products/brand/${params.id}`
+          ),
+      },
+    ],
   },
-  
 ]);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <AuthProvider>
-
-     <RouterProvider router={router} />
-    </AuthProvider>
-
-  </React.StrictMode>,
-)
+    <Provider>
+      <RouterProvider router={router} />
+    </Provider>
+  </React.StrictMode>
+);

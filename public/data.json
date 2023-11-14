@@ -1,0 +1,26 @@
+[
+  {
+    "brand": "google",
+    "image": "https://i.ibb.co/T8k6Vhv/google.jpg"
+  },
+  {
+    "brand": "apple",
+    "image": "https://i.ibb.co/dWQMLdy/apple.png"
+  },
+  {
+    "brand": "sony",
+    "image": "https://i.ibb.co/pLLd6fF/sony.png"
+  },
+  {
+    "brand": "samsung",
+    "image": "https://i.ibb.co/0Vj8j9b/samsung.jpg"
+  },
+  {
+    "brand": "intel",
+    "image": "https://i.ibb.co/BzVq7Kk/Intel.png"
+  },
+  {
+    "brand": "xiaomi",
+    "image": "https://i.ibb.co/GP6jDN2/mi.jpg"
+  }
+]

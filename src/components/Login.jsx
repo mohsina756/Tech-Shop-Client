@@ -1,78 +1,98 @@
-import { useContext } from "react";
-import { AuthContext } from "../Provider/AuthProvider";
+import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-// import { toast } from "react-toastify";
+import { FcGoogle } from "react-icons/fc";
+import { context } from "./ContextProvider/Provider";
+import Swal from "sweetalert2";
 
 const Login = () => {
-    const handleLogin = e =>{
-        e.preventDefault();
-        // console.log(e.currentTarget)
-        const form = new FormData(e.currentTarget)
-        const email = form.get('email')
-        const password = form.get('password')
-        signIn(email, password)
-        .then(result => {
-          alert(`${result.user}Logged In Successfully !`)
-        })
-        .catch(error => {
-          console.error(error)
-        })
-    }
-  const { signIn, handleGoogleLogin } = useContext(AuthContext);
-  const location = useLocation()?.state?.path || "/";
+  const { logInUser, googleLogIn } = useContext(context);
+  const [logInerror, setLogInError] = useState("");
+  const location = useLocation();
   const navigate = useNavigate();
-//   console.log(location);
-  const googleLoginHandler = () => {
-    handleGoogleLogin().then((user) => {
-      alert(`${user?.userName}Successfully Logged In and Registered`)
-      navigate(location);
-    });
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const form = new FormData(e.currentTarget);
+    const email = form.get("email");
+    const password = form.get("password");
+    setLogInError("");
+    logInUser(email, password)
+      .then(() => {
+        e.target.reset();
+        Swal.fire("Successfully! Logged In! ");
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((err) => setLogInError(err.code));
+  };
+
+  const handleGoogleLog = () => {
+    setLogInError("");
+    googleLogIn()
+      .then(() => {
+        Swal.fire(" Successfully! Registered & Logged In!");
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((error) => setLogInError(error.code));
   };
   return (
     <div>
-      <div>
-        <h2 className="text-3xl my-10 text-center"> please Login </h2>
-        <form onSubmit={handleLogin} className=" md:w-3/4 lg:w-1/2 mx-auto">
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Email</span>
-            </label>
-            <input
-              type="email"
-              placeholder="email"
-              className="input input-bordered"
-              required
-              name="email"
-            />
+      <div className="hero min-h-screen bg-cyan-500">
+        <div className="hero-content flex-col ">
+          <div className="text-center lg:text-left">
+            <h1 className="text-5xl font-bold text-white">Login now!</h1>
           </div>
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Password</span>
-            </label>
-            <input
-              type="password"
-              placeholder="password"
-              className="input input-bordered"
-              required
-              name="password"
-            />
-            
+          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+            <form onSubmit={handleLogin} className="card-body">
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Email</span>
+                </label>
+                <input
+                  type="email"
+                  placeholder="email"
+                  name="email"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Password</span>
+                </label>
+                <input
+                  type="password"
+                  placeholder="password"
+                  name="password"
+                  className="input input-bordered"
+                  required
+                />
+                {logInerror && (
+                  <p className="text-red-600 font-semibold">{logInerror}</p>
+                )}
+                <label className="label">
+                  <Link to="/register">
+                    New Here? please
+                    <span className=" text-blue-600 link link-hover mx-1">
+                      Register Here
+                    </span>
+                  </Link>
+                </label>
+              </div>
+              <div className="form-control mt-6">
+                <button className="btn bg-cyan-500 text-white hover:text-black hover:bg-white normal-case">
+                  Login
+                </button>
+              </div>
+            </form>
+            <button
+              onClick={handleGoogleLog}
+              className=" mb-2 mx-2 btn btn-outline normal-case  border-none  hover:bg-slate-400 hover:text-black"
+            >
+              <FcGoogle></FcGoogle>
+              Log in with Google
+            </button>
           </div>
-          <div className="form-control mt-6">
-            <button className="btn btn-primary">Login</button>
-          </div>
-        </form>
-        <p className="text-center mt-4">
-          Do not have a account{" "}
-          <Link className="text-blue-600" to="/register">
-            Register
-          </Link>
-        </p>
-      </div>
-      <div className="card-actions justify-center my-5">
-        <button onClick={googleLoginHandler} className="btn btn-primary">
-          Login using google
-        </button>
+        </div>
       </div>
     </div>
   );
